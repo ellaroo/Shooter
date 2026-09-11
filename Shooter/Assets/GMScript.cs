@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GMScript : MonoBehaviour
 {
+    public bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
