@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public Vector3 fall;
+    public GameObject gmScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,14 +15,19 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y >= -5)
+        if (gmScript.GetComponent<GMScript>().gameOver == false)
+        {
+            if (transform.position.x <= -9.5)
         //change -5 value to correct value
-        {
-            transform.position += fall;
+                {
+                    transform.position += fall;
+                }
+            else
+                 {
+                    Destroy(gameObject);
+                }
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
+        
     }
 }

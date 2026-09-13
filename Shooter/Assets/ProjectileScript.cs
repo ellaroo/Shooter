@@ -15,8 +15,7 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= 10)
-        //change 10
+        if (transform.position.x >= 10)
         {
             transform.position += shoot;
         }
